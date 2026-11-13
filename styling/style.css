@@ -261,7 +261,9 @@ main
     text-align: center;
     box-sizing: border-box; 
 }
-
+#multi-booking {
+    scroll-margin-top: 100px;
+}
 .text-box h1 
 {
     font-size: 3rem;
