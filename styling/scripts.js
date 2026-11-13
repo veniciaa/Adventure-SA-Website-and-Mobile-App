@@ -47,3 +47,80 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
+// =========================================
+// CONTACT PAGE FORM VALIDATION
+// =========================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Get the contact form
+    const contactForm = document.getElementById("contactForm");
+
+    // Get the feedback paragraph
+    const feedback = document.getElementById("formFeedback");
+
+    // Check that the contact form exists
+    if (!contactForm) return;
+
+    contactForm.addEventListener("submit", function (event) {
+
+        // Prevent the default form submission
+        event.preventDefault();
+
+        // Check that all required fields are valid
+        if (!contactForm.checkValidity()) {
+
+            contactForm.reportValidity();
+
+            feedback.textContent =
+                "Please complete all required fields correctly.";
+
+            return;
+        }
+
+        // Collect visitor information
+        const visitorName =
+            document.getElementById("contactName").value.trim();
+
+        const visitorEmail =
+            document.getElementById("contactEmail").value.trim();
+
+        const visitorMessage =
+            document.getElementById("contactMessage").value.trim();
+
+        // Check that the message contains meaningful content
+        if (visitorMessage.length < 10) {
+
+            feedback.textContent =
+                "Please enter a message of at least 10 characters.";
+
+            return;
+        }
+
+        // Prepare the email subject and body
+        const subject = encodeURIComponent(
+            "Adventure Escape SA - Website Enquiry"
+        );
+
+        const body = encodeURIComponent(
+            "Name: " + visitorName +
+            "\nEmail: " + visitorEmail +
+            "\n\nMessage:\n" + visitorMessage
+        );
+
+        // Open the visitor's default email application
+        const mailtoLink =
+            "mailto:info@adventureescapesa.co.za" +
+            "?subject=" + subject +
+            "&body=" + body;
+
+        feedback.textContent =
+            "Your email application will open with your message ready to send.";
+
+        // Open email application
+        window.location.href = mailtoLink;
+
+    });
+
+});

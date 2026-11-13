@@ -6,6 +6,11 @@
     <meta name="description" content="Get in touch with Adventure Escape SA to organize tailored team-building excursions or individual tours.">
     <title>Contact Us | Adventure Escape SA</title>
     <link rel="stylesheet" href="./styling/style.css">
+    <!-- Reuse heading animation -->
+    <script src="./scripts/about.js" defer></script>
+
+    <!-- Contact form functionality -->
+<script src="./scripts/contact.js" defer></script>
 </head>
 <body>
    
@@ -40,41 +45,218 @@
 
     </header>
 
-    <main>
-        <div class="text-box">
 
-            <h1>Get In Touch</h1>
+       
+<main class="contact-main">
+
+    <!-- CONTACT PAGE HEADING -->
+    <h1 class="animated-heading contact-heading">
+        Get In Touch
+    </h1>
+
+    <p class="contact-intro">
+        Have questions about team events or custom trips?
+        <br>
+        Let's plan your next adventure!
+    </p>
+
+    <!-- CONTACT CONTENT -->
+    <div class="contact-layout">
+
+        <!-- CONTACT FORM -->
+        <section class="contact-form-card">
+
+            <h2>Send Us a Message</h2>
 
             <p>
-                Have questions about team events or custom trips? Let's plan your adventure layout.
+                Complete the form below and get in touch
+                with our adventure team.
             </p>
-            
-            <form>
 
-                <label>Your Name: 
-                    <input class="input" type="text">
-                </label>
+            <form id="contactForm">
 
-                <label>Email Address: 
-                    <input class="input" type="email">
-                </label>
+                <label for="contactName">Your Name:</label>
+                <input
+                    type="text"
+                    id="contactName"
+                    name="name"
+                    class="input"
+                    placeholder="Enter your full name"
+                    autocomplete="name"
+                    required
+                >
 
-                <label class="message">Message: 
-                    <textarea class="input">
-                    </textarea>
-                </label>
-                
-                <div class="btn-container">
+                <label for="contactEmail">Email Address:</label>
+                <input
+                    type="email"
+                    id="contactEmail"
+                    name="email"
+                    class="input"
+                    placeholder="Enter your email address"
+                    autocomplete="email"
+                    required
+                >
 
-                    <button>
-                        Send Message
-                    </button>
+                <label for="contactMessage">Message:</label>
+                <textarea
+                    id="contactMessage"
+                    name="message"
+                    class="input"
+                    rows="5"
+                    placeholder="How can we help you?"
+                    required
+                    minlength="10"
+                ></textarea>
 
-                </div>
+                <button type="submit" class="contact-submit">
+                    Send Message
+                </button>
+
+                <p
+                    id="formFeedback"
+                    class="form-feedback"
+                    role="status"
+                    aria-live="polite"
+                ></p>
 
             </form>
 
+        </section>
+
+
+        <!-- CONTACT INFORMATION -->
+        <section class="contact-info-card">
+
+            <h2>Contact Information</h2>
+
+            <div class="contact-detail">
+
+                <span class="contact-icon">✉</span>
+
+                <div>
+                    <h3>Email:</h3>
+                    <a href="mailto:info@adventureescapesa.co.za">
+                        info@adventureescapesa.co.za
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="contact-detail">
+
+                <span class="contact-icon">☎</span>
+
+                <div>
+                    <h3>Phone:</h3>
+                    <a href="tel:+27210000000">
+                        +27 21 000 0000
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="contact-detail">
+
+                <span class="contact-icon">📍</span>
+
+                <div>
+                    <h3>Address:</h3>
+                    <p>
+                        Sample Street, Cape Town,
+                        Western Cape, 8001
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="contact-detail">
+
+                <span class="contact-icon">◷</span>
+
+                <div>
+                    <h3>Opening Hours:</h3>
+                    <p>
+                        Mon-Fri: 08:00-17:00
+                        <br>
+                        Sat: 08:00-13:00
+                        <br>
+                        Sun: Closed
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="contact-detail">
+
+                <span class="contact-icon">@</span>
+
+                <div>
+                    <h3>Social Media:</h3>
+
+                    <p>
+                        <a href="https://www.instagram.com/"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Instagram
+                        </a>
+                        |
+                        <a href="https://www.facebook.com/"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Facebook
+                        </a>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- FIND US / GOOGLE MAP -->
+    <section class="find-us">
+
+        <h2>Find Us</h2>
+
+        <p>
+            Visit Adventure Escape SA and let your next
+            adventure begin!
+        </p>
+
+        <div class="map-container">
+
+            <iframe
+                src="https://www.google.com/maps?q=Cape+Town,+Western+Cape,+South+Africa&output=embed"
+                width="100%"
+                height="350"
+                style="border:0;"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Map showing Adventure Escape SA location">
+            </iframe>
+
         </div>
+
+        <a
+            href="https://www.google.com/maps/dir/?api=1&destination=Cape+Town,+Western+Cape,+South+Africa"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="directions-btn">
+
+            Get Directions
+
+        </a>
+
+    </section>
+
+
     </main>
 
     <!-- Footer -->
