@@ -6,11 +6,7 @@
     <meta name="description" content="Get in touch with Adventure Escape SA to organize tailored team-building excursions or individual tours.">
     <title>Contact Us | Adventure Escape SA</title>
     <link rel="stylesheet" href="./styling/style.css">
-    <!-- Reuse heading animation -->
-    <script src="./scripts/about.js" defer></script>
-
-    <!-- Contact form functionality -->
-<script src="./scripts/contact.js" defer></script>
+    <script src="./styling/scripts.js" defer></script>
 </head>
 <body>
    
@@ -258,6 +254,33 @@
 
 
     </main>
+
+    <dialog
+        id="submissionModal"
+        class="submission-modal"
+        aria-labelledby="submissionTitle"
+        aria-describedby="submissionDescription"
+    >
+        <button
+            type="button"
+            class="submission-modal-close"
+            aria-label="Close confirmation"
+        >&times;</button>
+
+        <div class="submission-success-icon" aria-hidden="true">
+            <span>&#10003;</span>
+        </div>
+
+        <h2 id="submissionTitle">Message Prepared Successfully!</h2>
+        <p id="submissionDescription">
+           To complete the process, please click the button "Open Email App" below to open your email application and send your message.
+        </p>
+
+        <a id="openEmailApp" class="submission-modal-button" href="#">
+            Open Email App
+        </a>
+        <a class="submission-modal-home" href="index.html">Back to Home</a>
+    </dialog>
 
     <!-- Footer -->
 
