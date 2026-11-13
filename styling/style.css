@@ -142,20 +142,50 @@ header {
     background-color: #9fd87a;
     color: #000000;
 }
-/* Style the CTA link directly to use the border */
-.mobile-book .btn-primary {
-    background-color: #ff5722; 
-    border: 2px solid #ff5722;     
-    color: #ffffff;             
+
+/* =========================================
+   SHARED BOOK AN ADVENTURE BUTTON
+   Applies to navigation and page buttons
+========================================= */
+
+.btn-primary {
+    display: inline-block;
+    background-color: #ff5722;
+    border: 2px solid #ff5722;
+    color: #ffffff !important;
+    padding: 0.8rem 2.2rem;
+    font-size: 1rem;
     font-weight: bold;
-    transition: all 0.3s ease;     /* Smooth transition for the hover effect */
+    border-radius: 30px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
+/* Hover effect */
 
-.mobile-book .btn-primary:hover {
-    background-color: #ffffff ;     /* Fills the button once you hover over it */
-    color:#ff5722;                /* Changes text to white for readability */
+.btn-primary:hover {
+    background-color: #ffffff;
+    border-color: #ff5722;
+    color: #ff5722 !important;
+    transform: translateY(-3px);
 }
+
+/* Visited link */
+
+.btn-primary:visited {
+    color: #ffffff;
+}
+
+/* Keyboard accessibility */
+
+.btn-primary:focus-visible {
+    outline: 3px solid #9fd87a;
+    outline-offset: 4px;
+}
+
 
 /* Logo container */
 .logo {
