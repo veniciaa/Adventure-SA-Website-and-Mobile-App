@@ -1895,7 +1895,11 @@ body {
 /* DECORATIVE CARD IMAGE PANELS */
 
 .card-image {
+    position: relative;
+    width: 100%;
+    height: 225px;
     min-height: 180px;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1903,6 +1907,40 @@ body {
     gap: 12px;
     font-size: 4rem;
     color: white;
+    border-radius: 12px;
+}
+
+/* Actual photographs */
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+/* Image hover effect */
+
+.service-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+/* Image labels */
+
+.image-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: rgba(35, 63, 25, 0.7);
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    box-sizing: border-box;
 }
 
 .adventure-image {
@@ -2435,6 +2473,142 @@ body {
     .services-page .discount-section,
     .services-page .services-cta {
         padding: 2rem 1rem;
+    }
+}
+
+/* Service highlight cards */
+
+.service-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.highlight-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
+    padding: 0 0 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.highlight-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Images */
+
+.highlight-image {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 20px;
+    transition: transform 0.45s ease;
+}
+
+.highlight-card:hover .highlight-image {
+    transform: scale(1.04);
+}
+
+.highlight-card h3 {
+    color: #2A3F31;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.highlight-card p {
+    color: #666666;
+    font-size: 16px;
+    line-height: 1.7;
+    padding: 0 20px;
+}
+
+/* Responsive design */
+
+@media (max-width: 900px) {
+    .service-highlights {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .service-highlights {
+        grid-template-columns: 1fr;
+    }
+
+    .highlight-image {
+        height: 210px;
+    }
+}
+
+/* Activity card images */
+
+.activity-image {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Activity cards */
+
+.highlight-card {
+    background: #f7f8f7;
+    padding: 20px;
+    border-radius: 22px;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.highlight-card:hover {
+    transform: translateY(-6px);
+}
+
+.highlight-card ul {
+    text-align: left;
+    padding-left: 25px;
+    line-height: 2.1;
+}
+
+.highlight-card li::marker {
+    color: #526b2d;
+}
+
+.highlight-card h2 {
+    color: #344f00;
+    font-size: 30px;
+    margin: 20px 0;
+}
+
+.book-btn {
+    width: 100%;
+    padding: 15px;
+    background: #344f00;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.book-btn:hover {
+    background: #526b2d;
+}
+
+@media (max-width: 600px) {
+    .activity-image {
+        height: 210px;
     }
 }
 
