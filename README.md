@@ -84,6 +84,14 @@ To change an image, replace the asset while keeping its filename, or update the 
 - The site has no backend, online payment processing, or database. Cart data is stored only in the visitor's browser.
 - The individual activity-card **Book Activity** buttons on the Services page are not currently connected to an action. Use the page's booking links to open the quotation form.
 
+## Published Website
+
+[Published Website](https://veniciaa.github.io/Adventure-SA-Website-and-Mobile-App/)
+
+## Youtube Link
+
+[Powerpoint Presentation](https://www.youtube.com/watch?v=dwoHPAovRdE)
+
 ## Repository
 
 [Adventure Escape SA on GitHub](https://github.com/veniciaa/Adventure-SA-Website-and-Mobile-App)
