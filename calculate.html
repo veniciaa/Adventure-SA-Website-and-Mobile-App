@@ -60,313 +60,364 @@
 
     </header>
 
-    <main>
+    
+<main class="cart-page">
 
-        <!-- SHOPPING CART -->
-        <section class="cart" id="cart">
+    <!-- PAGE INTRODUCTION -->
+    <section class="cart-hero">
+        <div class="cart-hero-content">
+            <span class="eyebrow">YOUR NEXT ADVENTURE STARTS HERE</span>
+            <h1 class="animated-heading">Adventure Shopping Cart</h1>
+            <p>Review your packages, enjoy package discounts and prepare for your next unforgettable experience.</p>
+        </div>
+    </section>
 
-            <h2 class="cart-title">
-                <i class="ri-shopping-bag-line"></i>
-                Your Cart
-            </h2>
+    <!-- SHOPPING CART -->
+    <section class="cart-section" id="cart">
+        <div class="section-heading">
+            <span class="eyebrow">YOUR SELECTION</span>
+            <h2>Your Adventure Packages</h2>
+            <p>Adjust your quantities or remove packages before checkout.</p>
+        </div>
 
-            <!-- Cart content -->
-            <div class="cart-content">
+        <div class="cart-layout">
 
-                <!-- CART ITEM -->
-                <div class="cart-box">
-
-                    <img src="images/product hiking.jpg"
-                        al="Ultimate Adventure Day"
-                        class="cart-img" width=" 200">
-
-                        <br>
-
-                        <span class="cart-price">R1,500.00</span>
-
-                        <!-- Quantity buttons -->
-                        <div class="cart-quantity">
-                            <br>
-                            <button type="button" id="decrease">-</button>
-                            
-                            <span class="number">1</span>
-
-                            <button type="button" id="increase">+</button>
-
-                        </div>
-
-                    </div>
-                    
-                    <br>
-                    <!-- Remove item icon -->
-                    <i class="ri-delete-bin-fill cart-remove"></i>
-
+            <div class="cart-items-panel">
+                <div class="cart-content" id="cart-content">
+                    <!-- JavaScript displays cart items here -->
                 </div>
 
+                <p class="empty-cart" id="empty-cart">
+                    Your cart is empty. Add an adventure package below to get started.
+                </p>
+
+                <a href="#packages" class="continue-shopping">
+                    <i class="ri-arrow-left-line"></i> Continue Shopping
+                </a>
             </div>
 
+            <!-- ORDER SUMMARY -->
+            <aside class="cart-summary">
+                <h2><i class="ri-receipt-line"></i> Order Summary</h2>
 
-            <!-- CART CALCULATIONS -->
-            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Number of packages</span>
+                    <strong id="package-count">0</strong>
+                </div>
 
-                <h3>Order Summary</h3>
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <strong id="subtotal">R0.00</strong>
+                </div>
 
-                <p>
-                    <span>Subtotal:</span>
-                    <span id="subtotal">R0.00</span>
+                <div class="summary-row discount-row">
+                    <span>Package discount</span>
+                    <strong id="discount">0%</strong>
+                </div>
+
+                <div class="summary-row discount-row">
+                    <span>Money saved</span>
+                    <strong id="discount-amount">R0.00</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Service fee</span>
+                    <strong id="service-fee">R0.00</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>VAT (15%)</span>
+                    <strong id="vat-amount">R0.00</strong>
+                </div>
+
+                <div class="summary-total">
+                    <span>Final Total</span>
+                    <strong id="final-total">R0.00</strong>
+                </div>
+
+                <button type="button" class="checkout-btn" id="checkout-btn">
+                    Proceed to Checkout <i class="ri-arrow-right-line"></i>
+                </button>
+
+                <p class="secure-note">
+                    <i class="ri-shield-check-line"></i>
+                    Review your details before confirming your booking.
                 </p>
+            </aside>
+        </div>
+    </section>
 
-                <p>
-                    <span>Number of packages:</span>
-                    <span id="package-count">0</span>
-                </p>
+    <!-- PACKAGE DISCOUNTS -->
+    <section class="discount-section">
+        <div class="section-heading">
+            <span class="eyebrow">MORE ADVENTURES, MORE SAVINGS</span>
+            <h2>Package Discounts</h2>
+            <p>Your discount is calculated automatically according to the total number of packages in your cart.</p>
+        </div>
 
-                <p>
-                    <span>Discount:</span>
-                    <span id="discount">0%</span>
-                </p>
-
-                <p>
-                    <span>Money saved:</span>
-                    <span id="discount-amount">R0.00</span>
-                </p>
-
-                <h3 class="final-total">
-                    <span>Final Total:</span>
-                    <span id="final-total">R0.00</span>
-                </h3>
-
+        <div class="discount-container">
+            <div class="discount-box">
+                <span class="discount-icon"><i class="ri-ticket-line"></i></span>
+                <h3>1 Package</h3>
+                <p>Standard Rate</p>
+                <strong>0% OFF</strong>
             </div>
 
+            <div class="discount-box">
+                <span class="discount-icon"><i class="ri-coupon-line"></i></span>
+                <h3>2 Packages</h3>
+                <p>Enjoy a saving</p>
+                <strong>5% OFF</strong>
+            </div>
 
-            <!-- BUY BUTTON -->
-            <button type="button" class="btn-buy">
-                Buy Now
+            <div class="discount-box">
+                <span class="discount-icon"><i class="ri-gift-line"></i></span>
+                <h3>3 Packages</h3>
+                <p>Enjoy bigger savings</p>
+                <strong>10% OFF</strong>
+            </div>
+
+            <div class="discount-box">
+                <span class="discount-icon"><i class="ri-vip-crown-line"></i></span>
+                <h3>4+ Packages</h3>
+                <p>Best package deal</p>
+                <strong>15% OFF</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- AVAILABLE PACKAGES -->
+    <section class="shop-section" id="packages">
+        <div class="section-heading">
+            <span class="eyebrow">EXPLORE OUR EXPERIENCES</span>
+            <h2>Our Adventure Packages</h2>
+            <p>Choose an experience and add it to your cart.</p>
+        </div>
+
+        <div class="product-content">
+
+            <article class="product-box">
+                <div class="img-box">
+                    <img src="images/product hiking.jpg" alt="Hiking adventure">
+                    <span class="product-tag">Popular</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Ultimate Adventure Day</h3>
+                    <p>Experience an exciting day outdoors.</p>
+                    <div class="price-and-cart">
+                        <span class="price" data-price="1500">R1,500.00</span>
+                        <button type="button" class="add-cart"
+                            data-name="Ultimate Adventure Day"
+                            data-price="1500"
+                            data-image="images/product hiking.jpg"
+                            aria-label="Add Ultimate Adventure Day to cart">
+                            <i class="ri-shopping-cart-line"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-box">
+                <div class="img-box">
+                    <img src="images/product family.jpg" alt="Family adventure package">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Family Explorer Packages</h3>
+                    <p>Enjoy an adventure with the whole family.</p>
+                    <div class="price-and-cart">
+                        <span class="price">R1,500.00</span>
+                        <button type="button" class="add-cart"
+                            data-name="Family Explorer Packages"
+                            data-price="1500"
+                            data-image="images/product family.jpg"
+                            aria-label="Add Family Explorer Packages to cart">
+                            <i class="ri-shopping-cart-line"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-box">
+                <div class="img-box">
+                    <img src="images/product mountain.jpg" alt="Mountain adventure">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Mountain Adventure</h3>
+                    <p>Discover the beauty of the mountains.</p>
+                    <div class="price-and-cart">
+                        <span class="price">R1,500.00</span>
+                        <button type="button" class="add-cart"
+                            data-name="Mountain Adventure"
+                            data-price="1500"
+                            data-image="images/product mountain.jpg"
+                            aria-label="Add Mountain Adventure to cart">
+                            <i class="ri-shopping-cart-line"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-box">
+                <div class="img-box">
+                    <img src="images/product team.jpg" alt="Corporate team challenge">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Corporate Team Challenge</h3>
+                    <p>Build teamwork through outdoor activities.</p>
+                    <div class="price-and-cart">
+                        <span class="price">R1,500.00</span>
+                        <button type="button" class="add-cart"
+                            data-name="Corporate Team Challenge"
+                            data-price="1500"
+                            data-image="images/product team.jpg"
+                            aria-label="Add Corporate Team Challenge to cart">
+                            <i class="ri-shopping-cart-line"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-box">
+                <div class="img-box">
+                    <img src="images/product ziplining.jpg" alt="Ziplining adventure">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Ziplining Adventure</h3>
+                    <p>Enjoy an unforgettable ziplining experience.</p>
+                    <div class="price-and-cart">
+                        <span class="price">R750.00</span>
+                        <button type="button" class="add-cart"
+                            data-name="Ziplining Adventure"
+                            data-price="750"
+                            data-image="images/product ziplining.jpg"
+                            aria-label="Add Ziplining Adventure to cart">
+                            <i class="ri-shopping-cart-line"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-box">
+                <div class="img-box">
+                    <img src="images/product kayaking.jpg" alt="Kayaking experience">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Kayaking Experience</h3>
+                    <p>Explore the water with an exciting experience.</p>
+                    <div class="price-and-cart">
+                        <span class="price">R750.00</span>
+                        <button type="button" class="add-cart"
+                            data-name="Kayaking Experience"
+                            data-price="750"
+                            data-image="images/product kayaking.jpg"
+                            aria-label="Add Kayaking Experience to cart">
+                            <i class="ri-shopping-cart-line"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-box">
+                <div class="img-box">
+                    <img src="images/product rock climbing.jpg" alt="Rock climbing session">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Rock Climbing Session</h3>
+                    <p>Challenge yourself with a climbing adventure.</p>
+                    <div class="price-and-cart">
+                        <span class="price">R750.00</span>
+                        <button type="button" class="add-cart"
+                            data-name="Rock Climbing Session"
+                            data-price="750"
+                            data-image="images/product rock climbing.jpg"
+                            aria-label="Add Rock Climbing Session to cart">
+                            <i class="ri-shopping-cart-line"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- CUSTOMER CHECKOUT DETAILS -->
+    <section class="customer-section" id="customer-details">
+        <div class="section-heading">
+            <span class="eyebrow">ALMOST READY</span>
+            <h2>Customer Details</h2>
+            <p>Enter your details to prepare your booking invoice.</p>
+        </div>
+
+        <form id="checkout-form" class="customer-form">
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="customer-name">Full Name *</label>
+                    <input type="text" id="customer-name"
+                        name="customerName" placeholder="Enter your full name"
+                        minlength="2" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="customer-email">Email Address *</label>
+                    <input type="email" id="customer-email"
+                        name="customerEmail" placeholder="example@email.com"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="customer-phone">Contact Number *</label>
+                    <input type="tel" id="customer-phone"
+                        name="customerPhone" placeholder="e.g. 0821234567"
+                        pattern="(\+27|0)[0-9]{9}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="booking-date">Preferred Adventure Date *</label>
+                    <input type="date" id="booking-date"
+                        name="bookingDate" required>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="customer-address">Address / Location</label>
+                    <textarea id="customer-address" name="customerAddress"
+                        rows="3" placeholder="Enter your address or preferred location"></textarea>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="customer-notes">Additional Requests</label>
+                    <textarea id="customer-notes" name="customerNotes"
+                        rows="3" placeholder="Any special requests or additional information?"></textarea>
+                </div>
+            </div>
+
+            <label class="terms-label">
+                <input type="checkbox" id="terms" required>
+                I confirm that the information provided is correct.
+            </label>
+
+            <button type="submit" class="checkout-btn">
+                Generate Booking Invoice <i class="ri-file-list-3-line"></i>
             </button>
 
-        </section>
-
-
-        <!-- DISCOUNT INFORMATION -->
-        <section class="discount-section">
-
-            <h2 class="section-title">Package Discounts</h2>
-
-            <p>
-                Book more adventure packages and enjoy a discount!
-            </p>
-
-            <div class="discount-container">
-
-                <div class="discount-box">
-                    <h3>1 booking</h3>
-                    <p>0% Discount(Standard Rate)</p>
-                </div>
-
-                <div class="discount-box">
-                    <h3>2 bookings</h3>
-                    <p>5% Discount</p>
-                </div>
-
-                <div class="discount-box">
-                    <h3>3 bookings</h3>
-                    <p>10% Discount</p>
-                </div>
-
-                <div class="discount-box">
-                    <h3>4 or more bookings</h3>
-                    <p>15% Discount</p>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- AVAILABLE PRODUCTS -->
-        <section class="shop">
-
-            <h1 class="section-title">Our Adventure Packages</h1>
-
-            <div class="product-content">
-
-                <!-- PRODUCT 1 -->
-                <div class="product-box">
-
-                    <div class="img-box">
-                        <img src="images/product hiking.jpg"
-                            alt="Hiking adventure"
-                            width="200"
-                            height="300">
-                    </div>
-
-                    <h2 class="product-name">
-                        Ultimate Adventure Day
-                    </h2>
-
-                    <div class="price-and-cart">
-
-                        <span class="price">R1,500.00</span>
-
-                        <i class="ri-shopping-cart-line add-cart"></i>
-
-                    </div>
-
-                </div>
-
-                <!-- PRODUCT 2 -->
-                <div class="product-box">
-
-                    <div class="img-box">
-                        <img src="images/product family.jpg"
-                            alt="Family adventure package"
-                            width="200"
-                            height="300">
-                    </div>
-
-                    <h2 class="product-name">
-                        Family Explorer Packages
-                    </h2>
-
-                    <div class="price-and-cart">
-
-                        <span class="price">R1,500.00</span>
-
-                        <i class="ri-shopping-cart-line add-cart"></i>
-
-                    </div>
-
-                </div>
-
-                <!-- PRODUCT 3 -->
-                <div class="product-box">
-
-                    <div class="img-box">
-                        <img src="images/product mountain.jpg"
-                            alt="Mountain adventure"
-                            width="200"
-                            height="300">
-                    </div>
-
-                    <h2 class="product-name">
-                        Mountain Adventure
-                    </h2>
-
-                    <div class="price-and-cart">
-
-                        <span class="price">R1,500.00</span>
-
-                        <i class="ri-shopping-cart-line add-cart"></i>
-
-                    </div>
-
-                </div>
-
-
-                <!-- PRODUCT 4 -->
-                <div class="product-box">
-
-                    <div class="img-box">
-                        <img src="images/product team.jpg"
-                            alt="Corporate team challenge"
-                            width="200"
-                            height="300">
-                    </div>
-
-                    <h2 class="product-name">
-                        Corporate Team Challenge
-                    </h2>
-
-                    <div class="price-and-cart">
-
-                        <span class="price">R1,500.00</span>
-
-                        <i class="ri-shopping-cart-line add-cart"></i>
-
-                    </div>
-
-                </div>
-
-
-                <!-- PRODUCT 5 -->
-                <div class="product-box">
-
-                    <div class="img-box">
-                        <img src="images/product ziplining.jpg"
-                            alt="Ziplining adventure"
-                            width="200"
-                            height="300">
-                    </div>
-
-                    <h2 class="product-name">
-                        Ziplining Adventure
-                    </h2>
-
-                    <div class="price-and-cart">
-
-                        <span class="price">R750.00</span>
-
-                        <i class="ri-shopping-cart-line add-cart"></i>
-
-                    </div>
-
-                </div>
-
-
-                <!-- PRODUCT 6 -->
-                <div class="product-box">
-
-                    <div class="img-box">
-                        <img src="images/product kayaking.jpg"
-                            alt="Kayaking experience"
-                            width="200"
-                            height="300">
-                    </div>
-
-                    <h2 class="product-name">
-                        Kayaking Experience
-                    </h2>
-
-                    <div class="price-and-cart">
-
-                        <span class="price">R750.00</span>
-
-                        <i class="ri-shopping-cart-line add-cart"></i>
-
-                    </div>
-
-                </div>
-
-
-                <!-- PRODUCT 7 -->
-                <div class="product-box">
-
-                    <div class="img-box">
-                        <img src="images/product rock climbing.jpg"
-                            alt="Rock climbing session"
-                            width="200"
-                            height="300">
-                    </div>
-
-                    <h2 class="product-name">
-                        Rock Climbing Session
-                    </h2>
-
-                    <div class="price-and-cart">
-
-                        <span class="price">R750.00</span>
-
-                        <i class="ri-shopping-cart-line add-cart"></i>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-    
-    </main>
+            <p id="form-message" role="status"></p>
+        </form>
+    </section>
+
+    <!-- GENERATED INVOICE -->
+    <section class="invoice-section" id="invoice-section" hidden>
+        <div id="invoice-content">
+            <!-- JavaScript generates invoice here -->
+        </div>
+
+        <div class="invoice-actions">
+            <button type="button" id="print-invoice" class="checkout-btn">
+                <i class="ri-printer-line"></i> Print / Save Invoice
+            </button>
+        </div>
+    </section>
+
+</main>
 
     <!-- Footer -->
 
@@ -394,6 +445,6 @@
         </div>
 
     </footer>
-    
+    <script src="./styling/scripts.js" defer></script>
 </body>
 </html>
