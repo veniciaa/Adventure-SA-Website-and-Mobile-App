@@ -1,131 +1,89 @@
-# Adventure-Escape-SA-Website-
-## About The Project
+# Adventure Escape SA
 
-*Adventure Escaoe SA Website*is a web project focused on presenting outdoor
-adventures and experiences in South Africa. It aims to provide visitors
-with an inviting way to explore outdoor activities through a clear
-layout, nature-inspired colours, imagery, and straightforward
-navigation.
+Adventure Escape SA is a static website for exploring outdoor activities and adventure packages in South Africa. Visitors can learn about the business and its team, browse experiences, request a quotation, contact the business, and use a shopping cart to calculate a package total.
 
-The visual direction uses a nature-inspired palette, including sage
-green and herbal green tones, to create a calm, outdoors-focused
-identity. The layout is intended to make good use of whitespace so that
-content remains readable and pages feel organised across different
-screen sizes.
+## Pages
 
-### Project Goals
+- **Home** (`index.html`): Introduces the business and highlights experiences and team members.
+- **About** (`about.html`): Shares the business story, mission, vision, approach, and team.
+- **Services** (`services.html`): Presents activities, packages, prices, and multi-booking offers.
+- **Booking** (`booking.html`): Validates a quotation request and prepares an email for the visitor to send.
+- **Gallery** (`gallery.html`): Displays adventure and team photos, with a dropdown menu and team directory table.
+- **Cart** (`calculate.html`): Manages selected packages, quantities, totals, and invoice printing.
+- **Contact** (`contact.html`): Validates a contact message and prepares an email for the visitor to send.
 
--   Present outdoor experiences in an engaging, easy-to-browse format.
--   Use consistent navigation and styling throughout the website.
--   Apply a nature-inspired colour palette and outdoor imagery.
--   Maintain readable content, visual hierarchy, and purposeful
-    whitespace.
--   Build a foundation that can be expanded with more activities and
-    visitor information.
+## Features
 
-### Built With
+- Responsive layouts styled with shared CSS.
+- Shared JavaScript for animated headings and page interactions.
+- Booking and contact forms with input validation.
+- Cart data saved in browser `localStorage`, so it remains available in that browser.
+- Cart calculations include quantity-based discounts, a service fee, and VAT; checkout can generate a printable invoice.
+- Local image assets used across the Home, About, and Gallery pages.
+
+## Technologies
+
 - HTML5
 - CSS3
-- Javascript
+- JavaScript
 
-### Design Approach
+No package installation or build step is required.
 
-The design direction emphasises:
--   Nature Inspired Colors: soft grey sage `#9CAF88`, bright herbal
-    sage `#98A869`, and nature herbal sage `#42A5F4` *(confirm the final
-    hex value used in your CSS; the intended palette may use a different
-    green tone)*.
--   White Space: consistent spacing around sections, text, cards, and
-    images.
--   Consistency: reusable navigation and shared visual styles across
-    pages.
--  Responsive Layout: content should remain usable on desktop,
-    tablet, and mobile screens.
+## Run locally
 
-    ## Getting Started
+From the project directory, start Python's built-in static web server:
 
-Follow these steps to get a local copy of the website running on your
-computer.
+```powershell
+py -m http.server 8080
+```
 
-### Prerequisites
+Then open [http://localhost:8080](http://localhost:8080) in a browser. Stop the server with `Ctrl+C` in the terminal.
 
-You will need:
+Alternatively, open the project in Visual Studio Code and use the Live Server extension.
 
--   A modern web browser, such as Chrome, Firefox, or Edge.
--   A code editor such as [Visual Studio
-    Code](https://code.visualstudio.com/).
--   [Git](https://git-scm.com/) to clone the repository, or download the
-    repository as a ZIP file from GitHub.
+## Main project files
 
-No package installation is required because the project consist of a 
-static HTML, CSS, and JavaScript files.
+```text
+.
+├── index.html
+├── about.html
+├── services.html
+├── booking.html
+├── gallery.html
+├── calculate.html
+├── contact.html
+├── styling/
+│   ├── style.css
+│   └── scripts.js
+├── images/
+└── favicon_io/
+```
 
-### Installation
+## Code and image references
 
-1.  *Clone the Repo*
+The page markup is in the root-level HTML files listed above. Shared behavior and presentation are defined in:
 
-    git clone https://github.com/veniciaa/Adventure-SA-Website-.git
-    
+- [`styling/scripts.js`](./styling/scripts.js): animated headings, booking and contact form handling, and cart behavior.
+- [`styling/style.css`](./styling/style.css): shared page styles, responsive layouts, and image backgrounds.
 
-2. *open Project Folder*
+Images are stored locally in `images/` and referenced from the HTML using relative `src` paths. The shared stylesheet uses relative `url(...)` paths (for example, `../images/background.jpg`).
 
-    cd Adventure-SA-Website-
-    
+| Image purpose | Files referenced by the pages |
+| --- | --- |
+| Logo and site background | `images/logo.jpeg`, `images/background.jpg` |
+| Team portraits reused across Home, About, and Gallery | `images/Ange.jpeg`, `images/Dan.jpeg`, `images/Mbali.jpeg`, `images/Ntombi.jpeg`, `images/Thabiso.jpeg` |
+| Home and Gallery adventures | `images/hike.jpg`, `images/hike1.jpg`, `images/hike2.jpg`, `images/kayak.jpg`, `images/zipline2.jpg`, `images/course.jpg`, `images/zipline equipment.jpg`, `images/obstacle course.jpg`, `images/rock climbing.jpg` |
+| Services activities and packages | `images/adventure.jpeg`, `images/guided.jpeg`, `images/package.jpeg`, `images/aultimateday.jpeg`, `images/familyexplore.jpeg`, `images/mountain.jpeg`, `images/team.jpeg`, `images/ziplining.jpeg`, `images/kayaking.jpeg`, `images/rock.jpeg` |
+| Cart product cards | `images/product hiking.jpg`, `images/product family.jpg`, `images/product mountain.jpg`, `images/product team.jpg`, `images/product ziplining.jpg`, `images/product kayaking.jpg`, `images/product rock climbing.jpg` |
 
-3.  *open Folder in VSCode*, or use your preferred
-    code editor.
+To change an image, replace the asset while keeping its filename, or update the matching `src`, `data-image`, or CSS `url(...)` reference. Keep spaces and capitalization in filenames consistent with the references.
 
-4.  *Run the Website*
+## Notes and limitations
 
-    Open the main HTML file (usually `index.html`) in your browser.
-    Alternatively, use the Live Server extension in Visual Studio Code
-    if it is installed.
+- Booking and contact requests use `mailto:` links. The visitor must send the prepared email from an email application; the site does not submit requests to a server.
+- The site has no backend, online payment processing, or database. Cart data is stored only in the visitor's browser.
+- The individual activity-card **Book Activity** buttons on the Services page are not currently connected to an action. Use the page's booking links to open the quotation form.
 
-## Project Structure
-The exact structure may differ depending on the files currently in the
-repository. A typical structure for this type of project could look like
-this:
+## Repository
 
-
-Phase2XHAWWEBSITE/
-│
-├── .vscode/
-│   └── launch.json
-│
-├── Adventure-SA-Website-/
-│   │
-│   ├── index.html
-│   ├── about.html
-│   ├── services.html
-│   ├── booking.html
-│   ├── contact.html
-│   ├── gallery.html
-│   ├── calculate.html
-│   │
-│   ├── styling/
-│   │   └── style.css
-│   │
-│   ├── images/
-│   │   ├── logo.jpg
-│   │   ├── hiking.jpg
-│   │   ├── camping.jpg
-│   │   ├── safari.jpg
-│   │   └── other-images/
-│   │
-│   ├── favicon.ico
-│   │
-│   ├── README.md
-│   │
-│   └── .gitignore
-│
-└── README.md
-
-Video Presentation: https://youtu.be/Iq1OzFUxFK4
-
-## Contact
-
-*Contact Details* Angelique: 081 457 6029
-*Project Repo * [Adventure SA Website](https://github.com/veniciaa/Adventure-SA-Website-)
-
-
-    
+[Adventure Escape SA on GitHub](https://github.com/veniciaa/Adventure-SA-Website-and-Mobile-App)
