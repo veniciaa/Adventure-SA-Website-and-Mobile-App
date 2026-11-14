@@ -7,7 +7,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Gallery| Adventure Escape SA</title>
+    <title>Gallery | Adventure Escape SA</title>
 
     <link rel="stylesheet" href="./styling/style.css">
 
@@ -52,9 +52,28 @@
 
     </header>
 
-        <main>
-            
-            <div class="gallery-grid">
+        <main class="gallery-page">
+            <section class="gallery-intro">
+                <p class="gallery-eyebrow">ADVENTURE ESCAPE SA</p>
+                <h1>Adventure Gallery</h1>
+                <p>Explore our outdoor experiences and meet the people who make every adventure memorable.</p>
+
+                <details class="gallery-dropdown">
+                    <summary>Explore this page</summary>
+                    <nav aria-label="Gallery page sections">
+                        <a href="#adventure-gallery">Adventure Gallery</a>
+                        <a href="#meet-the-team">Meet Our Team</a>
+                        <a href="#team-directory">Team Directory</a>
+                    </nav>
+                </details>
+            </section>
+
+            <section class="gallery-section" id="adventure-gallery">
+                <div class="gallery-section-heading">
+                    <p class="gallery-eyebrow">MEMORIES FROM THE TRAIL</p>
+                    <h2>Adventure Highlights</h2>
+                </div>
+                <div class="gallery-grid">
 
                 <!--image 1-->
                 <div class="gallery-card">
@@ -187,7 +206,90 @@
                     </div>
 
                     </div>
-            </div>
+                </div>
+            </section>
+
+            <section class="team-section" id="meet-the-team">
+                <div class="gallery-section-heading">
+                    <p class="gallery-eyebrow">THE PEOPLE BEHIND THE ADVENTURES</p>
+                    <h2>Meet Our Team</h2>
+                    <p>Add a team photo to each placeholder and update the names and details in the directory below.</p>
+                </div>
+
+                <div class="team-grid">
+                    <article class="team-card">
+                        <img class="team-photo" src="images/Ange.jpeg" alt="Angelique, Adventure Guide">
+                        <h3>Angelique</h3>
+                        <p>Adventure Guide</p>
+                    </article>
+                    <article class="team-card">
+                        <img class="team-photo" src="images/Thabiso.jpeg" alt="Thabiso, Water Activities Guide">
+                        <h3>Thabiso</h3>
+                        <p>Water Activities Guide</p>
+                    </article>
+                    <article class="team-card">
+                        <img class="team-photo" src="images/Mbali.jpeg" alt="Mbali, Climbing Instructor">
+                        <h3>Mbali</h3>
+                        <p>Climbing Instructor</p>
+                    </article>
+                    <article class="team-card">
+                        <img class="team-photo" src="images/Dan.jpeg" alt="Dhanush, Zipline Instructor">
+                        <h3>Dhanush</h3>
+                        <p>Zipline Instructor</p>
+                    </article>
+                    <article class="team-card">
+                        <img class="team-photo" src="images/Ntombi.jpeg" alt="Ntombi, Guest Experience Coordinator">
+                        <h3>Ntombi</h3>
+                        <p>Guest Experience Coordinator</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="team-directory-section" id="team-directory">
+                <div class="gallery-section-heading">
+                    <p class="gallery-eyebrow">GET TO KNOW US</p>
+                    <h2>Team Directory</h2>
+                </div>
+                <div class="team-table-wrapper">
+                    <table class="team-table">
+                        <caption>Team members and their adventure specialties</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Team Member</th>
+                                <th scope="col">Role</th>
+                                <th scope="col">Specialty</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Angelique</th>
+                                <td>Adventure Guide</td>
+                                <td>Hiking and trail safety</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Thabiso</th>
+                                <td>Water Activities Guide</td>
+                                <td>Kayaking and lake tours</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Mbali</th>
+                                <td>Climbing Instructor</td>
+                                <td>Rock climbing and equipment safety</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Dhanush</th>
+                                <td>Zipline Instructor</td>
+                                <td>Zipline safety and guest briefings</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Ntombi</th>
+                                <td>Guest Experience Coordinator</td>
+                                <td>Bookings and group support</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
 
         </main>
 

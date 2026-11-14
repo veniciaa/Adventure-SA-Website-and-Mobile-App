@@ -664,6 +664,104 @@ form
 }
 
 /*GALLERY PAGE*/
+.gallery-page {
+    display: block;
+    width: min(1200px, calc(100% - 2rem));
+    margin: 0 auto;
+    padding: 2rem 0 4rem;
+}
+
+.gallery-intro,
+.gallery-section-heading {
+    text-align: center;
+}
+
+.gallery-intro {
+    padding: 2rem 1rem 1.5rem;
+}
+
+.gallery-intro h1,
+.gallery-section-heading h2 {
+    color: #3A5204;
+    margin: 0.35rem 0 0.75rem;
+}
+
+.gallery-intro > p:not(.gallery-eyebrow),
+.gallery-section-heading > p:not(.gallery-eyebrow) {
+    color: #46504A;
+    line-height: 1.6;
+}
+
+.gallery-eyebrow {
+    color: #6b7f40;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin: 0;
+}
+
+.gallery-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 1rem;
+    text-align: left;
+}
+
+.gallery-dropdown summary {
+    background: #3A5204;
+    border-radius: 999px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+    list-style: none;
+    padding: 0.75rem 1.25rem;
+}
+
+.gallery-dropdown summary::-webkit-details-marker {
+    display: none;
+}
+
+.gallery-dropdown summary::after {
+    content: " ▾";
+}
+
+.gallery-dropdown[open] summary::after {
+    content: " ▴";
+}
+
+.gallery-dropdown nav {
+    position: absolute;
+    z-index: 10;
+    top: calc(100% + 0.4rem);
+    left: 0;
+    display: grid;
+    min-width: 13rem;
+    padding: 0.4rem;
+    border: 1px solid #e1e8dc;
+    border-radius: 0.75rem;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(35, 55, 35, 0.16);
+}
+
+.gallery-dropdown nav a {
+    border-radius: 0.4rem;
+    color: #34432f;
+    padding: 0.7rem 0.8rem;
+    text-decoration: none;
+}
+
+.gallery-dropdown nav a:hover,
+.gallery-dropdown nav a:focus-visible {
+    background: #edf3e7;
+}
+
+.gallery-section,
+.team-section,
+.team-directory-section {
+    padding-top: 2rem;
+    scroll-margin-top: 2rem;
+}
+
 .gallery-grid {
     display: flex;
     flex-wrap: wrap; /* Allows image cards to spill to new rows */
@@ -700,6 +798,79 @@ form
 {
 width: 100%; /*100% of the width of our gallery so it will be 200px*/
 height: auto;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.team-card {
+    overflow: hidden;
+    border: 1px solid #e1e8dc;
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(35, 55, 35, 0.08);
+    text-align: center;
+}
+
+.team-photo {
+    display: block;
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    background: #e8eee1;
+}
+
+.team-card h3 {
+    color: #3A5204;
+    margin: 1rem 0 0.35rem;
+}
+
+.team-card p {
+    color: #59645a;
+    margin: 0 0 1.25rem;
+    padding: 0 0.75rem;
+}
+
+.team-table-wrapper {
+    margin-top: 1.25rem;
+    overflow-x: auto;
+    border: 1px solid #e1e8dc;
+    border-radius: 0.75rem;
+}
+
+.team-table {
+    width: 100%;
+    min-width: 580px;
+    border-collapse: collapse;
+    background: #fff;
+    color: #34432f;
+    text-align: left;
+}
+
+.team-table caption {
+    padding: 0.9rem;
+    color: #46504A;
+    font-weight: 600;
+    text-align: left;
+}
+
+.team-table th,
+.team-table td {
+    border-top: 1px solid #e1e8dc;
+    padding: 0.9rem 1rem;
+}
+
+.team-table thead th {
+    background: #3A5204;
+    color: #fff;
+}
+
+.team-table tbody tr:nth-child(even) {
+    background: #f5f8f2;
 }
 
 /*FOOTER STYLING*/
