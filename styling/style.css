@@ -676,24 +676,46 @@ form
     text-align: center;
 }
 
+.gallery-intro,
+.gallery-section,
+.team-section,
+.team-directory-section {
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 24px;
+    background: rgba(88, 105, 85, 0.55);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+}
+
 .gallery-intro {
-    padding: 2rem 1rem 1.5rem;
+    position: relative;
+    z-index: 2;
+    padding: 2.5rem;
+}
+
+.gallery-section,
+.team-section,
+.team-directory-section {
+    margin-top: 2rem;
+    padding: 2.5rem;
+    scroll-margin-top: 2rem;
 }
 
 .gallery-intro h1,
 .gallery-section-heading h2 {
-    color: #3A5204;
+    color: #fff;
     margin: 0.35rem 0 0.75rem;
 }
 
 .gallery-intro > p:not(.gallery-eyebrow),
 .gallery-section-heading > p:not(.gallery-eyebrow) {
-    color: #46504A;
+    color: #f4f4f4;
     line-height: 1.6;
 }
 
 .gallery-eyebrow {
-    color: #6b7f40;
+    color: #d3e2ac;
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.12em;
@@ -755,13 +777,6 @@ form
     background: #edf3e7;
 }
 
-.gallery-section,
-.team-section,
-.team-directory-section {
-    padding-top: 2rem;
-    scroll-margin-top: 2rem;
-}
-
 .gallery-grid {
     display: flex;
     flex-wrap: wrap; /* Allows image cards to spill to new rows */
@@ -796,8 +811,17 @@ form
 
 .gallery-card img
 {
-width: 100%; /*100% of the width of our gallery so it will be 200px*/
-height: auto;
+    display: block;
+    width: 100%;
+    height: 220px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.gallery-card a {
+    display: block;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .team-grid {
@@ -853,8 +877,8 @@ height: auto;
 
 .team-table caption {
     padding: 0.9rem;
-    color: #46504A;
-    font-weight: 600;
+    color: #fff;
+    font-weight: 700;
     text-align: left;
 }
 
