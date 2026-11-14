@@ -8,7 +8,7 @@
 
     <meta name="description" content="Visit Adventure Escape SA, your premier booking destination for thrilling adventures in South Africa."> <!--Tells the browser a brief description of the page -->
     
-    <title>Adeventure Escape SA</title> <!--Tells the browser the title of the page. Will appear on the browser tab -->
+    <title>Adventure Escape SA | Home</title>
 
     <link rel="stylesheet" href="./styling/style.css"> <!--Tells the browser to link to an external CSS file for styling the page. The href attribute specifies the path to the CSS file. -->
     <!--added javascript animation-->
@@ -59,42 +59,95 @@
 
      <!--main page-->
 
-    <main>
-        <div class="text-box">
+    <main class="home-page">
+       <section class="home-hero home-panel">
+           <div class="home-hero-copy">
+               <p class="home-eyebrow">YOUR NEXT STORY STARTS OUTSIDE</p>
+               <h1 class="animated-heading home-heading">
+                   Welcome to <span class="heading-highlight">Adventure Escape SA</span>
+               </h1>
+               <p class="home-lead">
+                   Discover guided outdoor experiences across South Africa. From family outings
+                   to team adventures, find an experience that gets you out exploring.
+               </p>
+               <div class="home-actions">
+                   <a class="home-button" href="services.html">Explore packages</a>
+                   <a class="home-text-link" href="booking.html">Book an adventure</a>
+               </div>
+           </div>
+          
+       </section>
 
-    <h1 class="animated-heading home-heading">
-        Welcome to
-        <span class="heading-highlight">Adventure Escape SA</span>
-    </h1>
+       <section class="home-experiences home-panel" aria-labelledby="home-experiences-title">
+           <div class="home-section-heading">
+               <p class="home-eyebrow">FIND YOUR KIND OF ADVENTURE</p>
+               <h2 class="animated-heading" id="home-experiences-title">Explore the outdoors</h2>
+               <p>Choose an experience, gather your people, and let the next story begin.</p>
+           </div>
+           <div class="home-experience-grid">
+               <article class="home-experience-card">
+                   <img src="images/hike.jpg" alt="Hiking trail through a mountain landscape">
+                   <div>
+                       <h3>Hiking &amp; trails</h3>
+                       <p>Take in the views and explore at your own pace.</p>
+                       <a href="services.html">Discover packages</a>
+                   </div>
+               </article>
+               <article class="home-experience-card">
+                   <img src="images/kayak.jpg" alt="Kayaking on a calm lake">
+                   <div>
+                       <h3>Water adventures</h3>
+                       <p>Enjoy a fresh perspective from out on the water.</p>
+                       <a href="services.html">Discover packages</a>
+                   </div>
+               </article>
+               <article class="home-experience-card">
+                   <img src="images/zipline2.jpg" alt="Participants enjoying a zipline adventure">
+                   <div>
+                       <h3>Adrenaline experiences</h3>
+                       <p>Bring your sense of adventure and try something new.</p>
+                       <a href="services.html">Discover packages</a>
+                   </div>
+               </article>
+           </div>
+           <a class="home-offers-link" href="services.html#multi-booking">See our special offers</a>
+       </section>
 
-    <p>
-        Experience the thrill of adventure in South Africa with our curated experiences.
-
-        <b>Stop scrolling and start exploring.</b>
-
-        <br><br>
-
-        The world is too big to stay in one place, and your next unforgettable
-        adrenaline rush is just a few clicks away.
-
-        Your next great story is waiting; book your spot today and answer
-        the call of the wild.
-    </p>
-
-</div>
-
-        <div class="btn-container">
-            <a href="services.html">
-                <button>Packages</button> <!-- Links to the services page -->
-            </a>
-            
-            <a href="services.html#multi-booking">
-                <button>Special Offers</button> <!-- Links to the special offers page -->
-            </a>
-            <a href="booking.html">
-                <button>Book Now</button> <!-- Links to the booking page -->
-            </a>
-        </div>
+       <section class="home-team home-panel" aria-labelledby="home-team-title">
+           <div class="home-section-heading">
+               <p class="home-eyebrow">THE PEOPLE BEHIND THE ADVENTURES</p>
+               <h2 class="animated-heading" id="home-team-title">Meet the team</h2>
+               <p>Get to know some of the people helping make each experience memorable.</p>
+           </div>
+           <div class="team-grid">
+               <article class="team-card">
+                   <img class="team-photo" src="images/Ange.jpeg" alt="Angelique, Adventure Guide">
+                   <h3>Angelique</h3>
+                   <p>Adventure Guide</p>
+               </article>
+               <article class="team-card">
+                   <img class="team-photo" src="images/Thabiso.jpeg" alt="Thabiso, Water Activities Guide">
+                   <h3>Thabiso</h3>
+                   <p>Water Activities Guide</p>
+               </article>
+               <article class="team-card">
+                   <img class="team-photo" src="images/Mbali.jpeg" alt="Mbali, Climbing Instructor">
+                   <h3>Mbali</h3>
+                   <p>Climbing Instructor</p>
+               </article>
+               <article class="team-card">
+                   <img class="team-photo" src="images/Dan.jpeg" alt="Dhanush, Zipline Instructor">
+                   <h3>Dhanush</h3>
+                   <p>Zipline Instructor</p>
+               </article>
+               <article class="team-card">
+                   <img class="team-photo" src="images/Ntombi.jpeg" alt="Ntombi, Guest Experience Coordinator">
+                   <h3>Ntombi</h3>
+                   <p>Guest Experience Coordinator</p>
+               </article>
+           </div>
+           <a class="home-team-link" href="about.html">Learn more about Adventure Escape SA</a>
+       </section>
     </main>
 
     <!-- Footer -->

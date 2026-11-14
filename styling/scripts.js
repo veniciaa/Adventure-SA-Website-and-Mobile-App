@@ -171,6 +171,94 @@ if (contactForm) {
 }
 
 /* =========================================
+   BOOKING QUOTATION REQUEST
+========================================= */
+
+const bookingForm = document.getElementById("bookingForm");
+
+if (bookingForm) {
+
+    const nameInput = document.getElementById("bookingName");
+    const emailInput = document.getElementById("bookingEmail");
+    const adventureOptions = Array.from(
+        bookingForm.querySelectorAll('input[name="adventure"]')
+    );
+    const feedback = document.getElementById("bookingFeedback");
+    const emailLink = document.getElementById("bookingEmailLink");
+
+    function validateBookingName() {
+        const name = nameInput.value.trim();
+        nameInput.setCustomValidity(
+            nameInput.value && name.length < 2
+                ? "Enter at least two non-space characters for your name."
+                : ""
+        );
+    }
+
+    function updateAdventureSelectionValidity() {
+        const hasSelection = adventureOptions.some(option => option.checked);
+        adventureOptions[0].setCustomValidity(
+            hasSelection ? "" : "Select at least one adventure."
+        );
+    }
+
+    function clearBookingFeedback() {
+        feedback.textContent = "";
+        feedback.className = "booking-feedback";
+        emailLink.hidden = true;
+    }
+
+    nameInput.addEventListener("input", () => {
+        validateBookingName();
+        clearBookingFeedback();
+    });
+
+    emailInput.addEventListener("input", clearBookingFeedback);
+
+    adventureOptions.forEach(option => {
+        option.addEventListener("change", () => {
+            updateAdventureSelectionValidity();
+            clearBookingFeedback();
+        });
+    });
+
+    bookingForm.addEventListener("submit", event => {
+        event.preventDefault();
+
+        validateBookingName();
+        updateAdventureSelectionValidity();
+
+        if (!bookingForm.checkValidity()) {
+            feedback.textContent =
+                "Check your name and email, and select at least one adventure.";
+            feedback.className = "booking-feedback error";
+            bookingForm.reportValidity();
+            return;
+        }
+
+        const selectedAdventures = adventureOptions
+            .filter(option => option.checked)
+            .map(option => option.value);
+        const subject = encodeURIComponent(
+            "Adventure Escape SA - Quotation Request"
+        );
+        const body = encodeURIComponent(
+            `Name: ${nameInput.value.trim()}\n` +
+            `Email: ${emailInput.value.trim()}\n\n` +
+            `Selected adventures:\n- ${selectedAdventures.join("\n- ")}`
+        );
+
+        emailLink.href =
+            `mailto:info@adventureescapesa.co.za?subject=${subject}&body=${body}`;
+        emailLink.hidden = false;
+        feedback.textContent =
+            "Your request is ready. Open your email app using the link below to send it.";
+        feedback.className = "booking-feedback";
+    });
+
+}
+
+/* =========================================
    ADVENTURE ESCAPE SA - CART SYSTEM
 ========================================= */
 

@@ -8,9 +8,10 @@
 
     <meta name="description" content="Request a quotation for adventure experiences and multi-activity bookings throughout the Western Cape.">
 
-    <title>Booking| Adventure Escape SA</title>
+    <title>Booking | Adventure Escape SA</title>
 
     <link rel="stylesheet" href="./styling/style.css">
+    <script src="./styling/scripts.js" defer></script>
 
 </head>
 <body>
@@ -46,70 +47,64 @@
 
     </header>
 
-    <main>
+    <main class="booking-page">
+        <section class="booking-intro">
+            <p class="booking-eyebrow">LET'S PLAN YOUR NEXT ADVENTURE</p>
+            <h1 class="animated-heading">Request a Quotation</h1>
+            <p>Choose one or more experiences and share your contact details. Our team can follow up with a quotation.</p>
+        </section>
 
-        <div class="text-box">
+        <section class="booking-card" aria-label="Quotation request form">
+            <form id="bookingForm">
+                <div class="booking-fields">
+                    <div class="booking-field">
+                        <label for="bookingName">Full Name</label>
+                        <input
+                            id="bookingName"
+                            name="name"
+                            type="text"
+                            autocomplete="name"
+                            placeholder="Enter your full name"
+                            minlength="2"
+                            maxlength="80"
+                            required
+                        >
+                    </div>
 
-            <h1>Request a Quotation</h1>
-
-            <p>
-                Select your desired items. Multi-booking tier calculations apply automatically.
-            </p>
-            
-            <form>
-                <!--input fields-->
-                <!--name input-->
-                <label class="name">Full Name: 
-                    <input class="input" type="text">
-                </label>
-
-                <!--name input-->
-                <label class="email">Email Address: 
-                    <input class="input" type="email">
-                </label>
-                
-                <h3><u>Select Options:</u></h3>
-                
-                <!--Checkbox section-->
-                <label>
-                    <input type="checkbox" name="adventure">Ultimate Adventure Day
-                </label>
-               
-                <label>
-                    <input type="checkbox" name="adventure"> Family Explorer Package
-                </label>
-
-                <label>
-                    <input type="checkbox" name="adventure"> Mountain Adventure Package
-                </label>
-
-                <label>
-                    <input type="checkbox" name="adventure"> Corporate Team Challenge
-                </label>
-
-                <label>
-                    <input type="checkbox" name="adventure"> Ziplining Adventure
-                </label>
-
-                <label>
-                    <input type="checkbox" name="adventure"> Kayaking Experience
-                </label>
-
-                <label>
-                    <input type="checkbox" name="adventure"> Rock Climbing Session
-                </label>
-
-                <div class="btn-container">
-
-                    <button>
-                        Submit Request
-                    </button>
-
+                    <div class="booking-field">
+                        <label for="bookingEmail">Email Address</label>
+                        <input
+                            id="bookingEmail"
+                            name="email"
+                            type="email"
+                            autocomplete="email"
+                            placeholder="you@example.com"
+                            maxlength="254"
+                            required
+                        >
+                    </div>
                 </div>
+
+                <fieldset class="booking-options">
+                    <legend>Choose your adventures <span>(select at least one)</span></legend>
+                    <div class="booking-options-grid">
+                        <label><input type="checkbox" name="adventure" value="Ultimate Adventure Day"> Ultimate Adventure Day</label>
+                        <label><input type="checkbox" name="adventure" value="Family Explorer Package"> Family Explorer Package</label>
+                        <label><input type="checkbox" name="adventure" value="Mountain Adventure Package"> Mountain Adventure Package</label>
+                        <label><input type="checkbox" name="adventure" value="Corporate Team Challenge"> Corporate Team Challenge</label>
+                        <label><input type="checkbox" name="adventure" value="Ziplining Adventure"> Ziplining Adventure</label>
+                        <label><input type="checkbox" name="adventure" value="Kayaking Experience"> Kayaking Experience</label>
+                        <label><input type="checkbox" name="adventure" value="Rock Climbing Session"> Rock Climbing Session</label>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="booking-submit">Prepare Quotation Request</button>
+                <p id="bookingFeedback" class="booking-feedback" role="status" aria-live="polite"></p>
+                <a id="bookingEmailLink" class="booking-email-link" href="#" hidden>
+                    Open your email app to send the request
+                </a>
             </form>
-
-        </div>
-
+        </section>
     </main>
 
     <!-- Footer -->

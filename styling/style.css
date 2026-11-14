@@ -347,96 +347,272 @@ main
 }
 
 /*ABOUT PAGE*/
-.text-about 
-{   
-    width: 100%;
-    max-width: 1200px;
+.about-page {
+    display: block;
+    width: min(1200px, calc(100% - 2rem));
     margin: 0 auto;
-    background: rgba(88, 105, 85, 0.55); 
-    padding: 2.5rem;
+    padding: 2rem 0 4rem;
+    box-sizing: border-box;
+}
+
+.about-panel,
+.home-panel {
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 24px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    background: rgba(54, 72, 57, 0.78);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(8px);
-    text-align: center;
-    box-sizing: border-box; 
 }
 
-.text-about h1 
-{
-    font-size: 3rem;
-    color: #eeeded;
-    margin-bottom: 1rem;
+.about-hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 2rem;
+    padding: clamp(1.5rem, 4vw, 3.5rem);
 }
 
-.text-about p 
-{
-    font-size: 1.2rem;
-    color: #ffffff;
-    margin: 0 0 1.5rem 0;
-    text-align: center;
-}
-
-/*mission section*/
-.text-mission 
-{ 
-    background: rgba(96, 121, 21, 0.685);
-    width: 95%;
-    max-width: 1100px;
-    padding: 2.5rem;
+.about-hero-copy,
+.home-hero-copy {
+    width: 100%;
+    max-width: 900px;
     margin: 0 auto;
-    border-radius: 24px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    box-shadow: 0 8px 32px rgba(117, 113, 113, 0.3);
-    backdrop-filter: blur(8px);
-    text-align: center;
-    box-sizing: border-box;
-}
-
-.text-mission h1 
-{
-    font-size: 3rem;
-    color: #ffffff;
-    margin-bottom: 1rem;
-}
-
-.text-mission p 
-{
-    font-size: 1.2rem;
-    color: #ffffff;
-    margin: 0 0 1.5rem 0;
     text-align: center;
 }
 
-/*Vision section*/
-.text-vision 
-{ 
-    background: rgba(39, 59, 2, 0.55);
-    width: 95%;
-    max-width: 1000px;
-    padding: 2.5rem;
+.about-eyebrow,
+.home-eyebrow {
+    margin: 0 0 0.75rem;
+    color: #d3e2ac;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.about-hero h1 {
+    margin: 0 0 1rem;
+    color: #fff;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    line-height: 1.15;
+    text-align: center;
+}
+
+.about-lead {
+    max-width: 38rem;
     margin: 0 auto;
-    border-radius: 24px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    box-shadow: 0 8px 32px rgba(65, 63, 63, 0.3);
+    color: #f2f5ef;
+    font-size: 1.15rem;
+    line-height: 1.75;
+    text-align: center;
+}
+
+.about-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.75rem;
+}
+
+.about-button,
+.about-text-link {
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.about-button {
+    display: inline-block;
+    padding: 0.8rem 1.25rem;
+    border: 2px solid #ff5722;
+    border-radius: 999px;
+    background: #ff5722;
+    color: #fff;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.about-button:hover {
+    transform: translateY(-2px);
+    background: #e84c1c;
+}
+
+.about-text-link {
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+.about-hero-image {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.about-hero-image img {
+    display: block;
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+}
+
+.about-hero-image figcaption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0.9rem 1rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+    color: #fff;
+    font-weight: 600;
+}
+
+.about-story,
+.about-team {
+    margin-top: 2rem;
+    padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.about-story h2,
+.about-value-card h2,
+.about-team h2 {
+    margin: 0 0 1rem;
+    color: #fff;
+}
+
+.about-story > p:not(.about-eyebrow) {
+    max-width: 58rem;
+    margin: 0 auto 1rem;
+    color: #f2f5ef;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.about-values {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin-top: 2rem;
+}
+
+.about-value-card {
+    padding: 1.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    background: rgba(54, 72, 57, 0.82);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(8px);
-    text-align: center;
-    box-sizing: border-box;
 }
 
-.text-vision h1 
-{
-    font-size: 2.5rem;
-    color: #ffffff;
-    margin-bottom: 1rem;
+.about-value-card h2 {
+    font-size: 1.7rem;
 }
 
-.text-vision p 
-{
-    font-size: 1.2rem;
-    color: #ffffff;
-    margin: 0 0 1.5rem 0;
+.about-value-card > p:last-child {
+    margin: 0;
+    color: #f2f5ef;
+    line-height: 1.7;
+}
+
+.about-team-heading {
+    margin-bottom: 1.5rem;
     text-align: center;
+}
+
+.about-team-heading > p:last-child {
+    margin: 0;
+    color: #f2f5ef;
+    line-height: 1.6;
+}
+
+.about-team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+    gap: 1rem;
+}
+
+.about-team-card {
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+}
+
+.about-team-card img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.about-team-card > div {
+    padding: 0.9rem 1rem 1rem;
+}
+
+.about-team-card h3 {
+    margin: 0;
+    padding: 0;
+    color: #3a5204;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+.about-team-card p {
+    margin: 0.35rem 0 0;
+    color: #46504a;
+    line-height: 1.5;
+}
+
+.about-team-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 800px) {
+    .about-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .about-hero-image img {
+        height: 280px;
+    }
+
+    .about-values {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .about-page {
+        width: calc(100% - 1rem);
+        padding-top: 1rem;
+    }
+
+    .about-hero,
+    .about-story,
+    .about-team {
+        padding: 1.4rem;
+        border-radius: 18px;
+    }
+
+    .about-hero h1 {
+        font-size: 2.1rem;
+    }
+
+    .about-hero-image img {
+        height: 220px;
+    }
+
+    .about-team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .about-team-card img {
+        height: 160px;
+    }
 }
 
 /*Services section*/
@@ -516,6 +692,193 @@ main
     margin: 0 0 1.5rem 0;
     text-align: center;
     text-decoration: bold;
+}
+
+.booking-page {
+    display: block;
+    width: min(920px, calc(100% - 2rem));
+    margin: 0 auto;
+    padding: 2rem 0 4rem;
+    box-sizing: border-box;
+}
+
+.booking-intro {
+    margin: 0 auto 1.5rem;
+    text-align: center;
+}
+
+.booking-eyebrow {
+    margin: 0 0 0.75rem;
+    color: #d3e2ac;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.booking-intro h1 {
+    margin: 0 0 0.75rem;
+    color: #fff;
+}
+
+.booking-intro > p:last-child {
+    max-width: 42rem;
+    margin: 0 auto;
+    color: #f2f5ef;
+    line-height: 1.7;
+}
+
+.booking-card {
+    padding: clamp(1.25rem, 4vw, 2.5rem);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+    background: rgba(54, 72, 57, 0.82);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+}
+
+.booking-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.booking-field label {
+    display: block;
+    margin-bottom: 0.45rem;
+    color: #fff;
+    font-weight: 700;
+}
+
+.booking-field input {
+    width: 100%;
+    min-height: 48px;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid #d5dfd1;
+    border-radius: 10px;
+    background: #fff;
+    box-sizing: border-box;
+    color: #26352b;
+    font: inherit;
+}
+
+.booking-field input:focus-visible {
+    outline: 3px solid #ff8a65;
+    outline-offset: 2px;
+}
+
+.booking-options {
+    margin: 1.75rem 0;
+    padding: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 14px;
+}
+
+.booking-options legend {
+    padding: 0 0.45rem;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.booking-options legend span {
+    color: #d3e2ac;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.booking-options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+}
+
+.booking-options-grid label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    line-height: 1.45;
+}
+
+.booking-options-grid label:has(input:checked) {
+    border-color: #b7d88e;
+    background: rgba(211, 226, 172, 0.14);
+}
+
+.booking-options-grid input {
+    flex: 0 0 auto;
+    width: 1.1rem;
+    height: 1.1rem;
+    margin: 0.1rem 0 0;
+    accent-color: #ff5722;
+}
+
+.booking-submit {
+    display: block;
+    width: 100%;
+    padding: 0.9rem 1.25rem;
+    border: 2px solid #ff5722;
+    border-radius: 999px;
+    background: #ff5722;
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.booking-submit:hover {
+    transform: translateY(-2px);
+    background: #e84c1c;
+}
+
+.booking-feedback {
+    margin: 1rem 0 0;
+    color: #eaf5d9;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.booking-feedback.error {
+    color: #ffd0c7;
+}
+
+.booking-email-link {
+    display: block;
+    width: fit-content;
+    margin: 0.75rem auto 0;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    text-underline-offset: 0.2em;
+}
+
+.booking-email-link[hidden] {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .booking-page {
+        width: calc(100% - 1rem);
+        padding-top: 1rem;
+    }
+
+    .booking-fields,
+    .booking-options-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-card {
+        border-radius: 18px;
+    }
+
+    .booking-options {
+        padding: 1rem;
+    }
 }
 
 .booking 
@@ -1338,6 +1701,237 @@ form
     .text-box p {
         font-size: 1rem;
         line-height: 1.7;
+    }
+}
+
+.home-page {
+    display: block;
+    width: min(1200px, calc(100% - 2rem));
+    margin: 0 auto;
+    padding: 2rem 0 4rem;
+    box-sizing: border-box;
+}
+
+.home-hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 2rem;
+    padding: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+.home-hero .home-heading {
+    margin: 0 0 1rem;
+    padding-bottom: 1rem;
+    color: #fff;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    line-height: 1.15;
+    text-align: center;
+}
+
+.home-lead {
+    max-width: 38rem;
+    margin: 0 auto;
+    color: #f2f5ef;
+    font-size: 1.1rem;
+    line-height: 1.75;
+    text-align: center;
+}
+
+.home-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.75rem;
+}
+
+.home-button,
+.home-text-link {
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.home-button {
+    display: inline-block;
+    padding: 0.8rem 1.25rem;
+    border: 2px solid #ff5722;
+    border-radius: 999px;
+    background: #ff5722;
+    color: #fff;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.home-button:hover {
+    transform: translateY(-2px);
+    background: #e84c1c;
+}
+
+.home-text-link {
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+.home-hero-image {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.home-hero-image img {
+    display: block;
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+}
+
+.home-hero-image figcaption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0.9rem 1rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+    color: #fff;
+    font-weight: 600;
+}
+
+.home-experiences,
+.home-team {
+    margin-top: 2rem;
+    padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.home-section-heading {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.home-section-heading h2 {
+    margin: 0 0 0.75rem;
+    color: #fff;
+}
+
+.home-section-heading > p:last-child {
+    margin: 0;
+    color: #f2f5ef;
+    line-height: 1.6;
+}
+
+.home-experience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.home-experience-card {
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+}
+
+.home-experience-card img {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.home-experience-card > div {
+    padding: 1rem;
+}
+
+.home-experience-card h3 {
+    margin: 0 0 0.5rem;
+    padding: 0;
+    color: #3a5204;
+    font-size: 1.15rem;
+    text-align: left;
+}
+
+.home-experience-card p {
+    margin: 0 0 0.75rem;
+    color: #46504a;
+    line-height: 1.55;
+}
+
+.home-experience-card a,
+.home-offers-link,
+.home-team-link {
+    color: #3a5204;
+    font-weight: 700;
+    text-underline-offset: 0.2em;
+}
+
+.home-offers-link {
+    display: block;
+    width: fit-content;
+    margin: 1.5rem auto 0;
+    color: #fff;
+}
+
+.home-team .team-grid {
+    margin-top: 1.5rem;
+}
+
+.home-team-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: #fff;
+}
+
+@media (max-width: 850px) {
+    .home-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .home-hero-image img {
+        height: 280px;
+    }
+
+    .home-experience-grid {
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .home-page {
+        width: calc(100% - 1rem);
+        padding-top: 1rem;
+    }
+
+    .home-hero,
+    .home-experiences,
+    .home-team {
+        padding: 1.4rem;
+        border-radius: 18px;
+    }
+
+    .home-hero .home-heading {
+        font-size: 2rem;
+    }
+
+    .home-hero-image img {
+        height: 220px;
+    }
+
+    .home-experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-team .team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .home-team .team-photo {
+        height: 160px;
     }
 }
 
